@@ -28,16 +28,18 @@ app.get('/webhook', (req, res) => {
     const token = req.query['hub.verify_token'];
     const challenge = req.query['hub.challenge'];
 
-    if(mode && token) {
-        if(mode === 'subscribe' && token === verify_token) {
+    if (mode && token) {
+        if (mode === 'subscribe' && token === verify_token) {
             console.log('WEBHOOK_VERIFIED');
-            res.status(200).send(challenge);
+            res.status(200).send(challenge); // Envía la respuesta aquí después de verificar el token
         } else {
             res.sendStatus(403);
         }
+    } else {
+        res.send('GET request received'); // Envía una respuesta por defecto si los parámetros no están presentes
     }
-    res.send('GET request received');
 });
+
 
 
 app.listen(PORT, () => {
