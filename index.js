@@ -6,7 +6,6 @@ const PORT = process.env.PORT || 8080;
 const app = express().use(bodyParser.json());
 
 app.post('/webhook', (req, res) => {
-
     const body = req.body;
 
     if(body.object === 'page') {
@@ -20,6 +19,7 @@ app.post('/webhook', (req, res) => {
         res.sendStatus(404);
     }
 });
+
 
 app.get('/webhook', (req, res) => {
     const verify_token = 'dsdsdsfwrfrwfwrfwrfrwfrw'
