@@ -68,6 +68,8 @@ function callSendAPI(sender_psid, response) {
 app.post('/webhook', (req, res) => {
     const body = req.body;
 
+    console.log(JSON.stringify(req.body));
+
     if(body.object === 'page') {
         body.entry.forEach( entry => {
             const webhookEvent = entry.messaging[0];
