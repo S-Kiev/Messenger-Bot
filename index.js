@@ -5,6 +5,19 @@ const PORT = process.env.PORT || 8080;
 
 const app = express().use(bodyParser.json());
 
+
+// Identificador de la app
+// 1186973585537678
+
+//Secreto de la app
+// 2711c34f916db69562da27a2f3f20d11
+
+//Identificador de la pagina de facebook
+// 266440486547261
+
+// Token de acceso a la pagina de facebook
+// EAAQ3i9Lseo4BO74zqlzQvPffe8Qz1EWiUcGG2PPpMYwaoKF5iCtuiYjkGKSFyi6LcWvo3Nw0A7vvUofHcuXG4gxjStZAvBWqqsAJYLnRKEjs4zignmZCRRjttvwBglRcObQVOIEZCHiKVkRShWtoHS2sqjpHxfEqMInz2bmMcuo2fFPf6ZC1KZBrMeAjVStspl0iyyBTi
+
 app.post('/webhook', (req, res) => {
     const body = req.body;
 
@@ -22,7 +35,7 @@ app.post('/webhook', (req, res) => {
 
 
 app.get('/webhook', (req, res) => {
-    const verify_token = 'dsdsdsfwrfrwfwrfwrfrwfrw'
+    const verify_token = 'EAAQ3i9Lseo4BO74zqlzQvPffe8Qz1EWiUcGG2PPpMYwaoKF5iCtuiYjkGKSFyi6LcWvo3Nw0A7vvUofHcuXG4gxjStZAvBWqqsAJYLnRKEjs4zignmZCRRjttvwBglRcObQVOIEZCHiKVkRShWtoHS2sqjpHxfEqMInz2bmMcuo2fFPf6ZC1KZBrMeAjVStspl0iyyBTi'
 
     const mode = req.query['hub.mode'];
     const token = req.query['hub.verify_token'];
